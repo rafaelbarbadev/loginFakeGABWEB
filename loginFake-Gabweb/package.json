@@ -7,7 +7,7 @@
     "build": "ng build",
     "build-gh": "ng build --prod --base-href 'https://rafaelolivr.github.io/loginFakeGABWEB/'",
     "build-prod": "ng build --prod --base-href '/loginFakeGABWEB/'",
-    "deploy-gh": "ngh --dir /dist/loginFakeGABWEB",
+    "deploy-gh": "ngh --dir /dist/loginFake-Gabweb",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
