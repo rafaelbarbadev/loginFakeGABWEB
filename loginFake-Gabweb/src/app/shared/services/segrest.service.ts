@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import { BaseService } from './base.service';
+import { AbstractHttpService } from './abstract-http.service';
 import { environment } from 'src/environments/environment.prod';
 import { Orgao } from '../models/orgao';
 import { Observable } from 'rxjs/internal/Observable';
-import { of } from 'rxjs/internal/observable/of';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SegrestService extends BaseService {
+export class SegrestService extends AbstractHttpService<Orgao> {
 
-  constructor() {
-    super(environment.URL_REGREST);
+  constructor(http: HttpClient) {
+    super(http, environment.URL_REGREST);
    }
 
    public getOrgaos(): Observable<Orgao[]> {

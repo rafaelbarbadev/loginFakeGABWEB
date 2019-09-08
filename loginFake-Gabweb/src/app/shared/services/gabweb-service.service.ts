@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
-import { BaseService } from './base.service';
+import { AbstractHttpService } from './abstract-http.service';
 import { environment } from 'src/environments/environment.prod';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class GabwebServiceService extends BaseService {
+export class GabwebServiceService extends AbstractHttpService<any> {
 
-  constructor() {
-    super(environment.URL_GABINETEWEB);
+  constructor(http: HttpClient) {
+    super(http, environment.URL_GABINETEWEB);
   }
 
   public gerarSessao(): void {
